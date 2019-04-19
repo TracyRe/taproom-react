@@ -36,13 +36,52 @@ const kegList = [
 
 function EditKeg(props) {
 
-  const EditKeg =  {
-    background: '#fff',
-  }
-
-
   return (
-    <div style={EditKeg}>
+    <div>
+    <style jsx>{`
+      
+      div {
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.95);
+        margin: 1rem 2rem;
+        padding: 1rem;
+      }
+      
+      form {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-auto-rows: auto;
+        grid-row-gap: .25rem;
+        margin-top: 1rem;
+      }
+      
+      label {
+        text-align: right;
+        margin-right: .5rem;
+      }
+      
+      label + input {
+        margin-right: 2rem;
+      }
+
+      button {
+        align-self: center;
+        width: 150px;
+      }
+      
+      img {
+          height: 100%;
+          width: auto;
+          align-self: flex-start;
+        }
+
+        h3 {
+          line-height: 100%;
+          font-size: 1.15rem;
+          margin-bottom: .5rem;
+        }
+      `} 
+      </style>
       <h3>Edit Keg</h3>
       {kegList.map((keg, index) =>
         <KegChange

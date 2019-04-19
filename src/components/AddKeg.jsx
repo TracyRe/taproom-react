@@ -5,14 +5,49 @@ import barrel from '../assets/rum-barrel.jpeg';
 
 function AddKeg(props) {
 
-  const AddKeg =  {
-    background: '#fff',
-  }
-
-
   return (
-    <div style={AddKeg}>
-      <h2>Add Keg</h2>
+    <div>
+      <style jsx>{`
+        
+        div {
+          border-radius: 4px;
+          background: rgba(255, 255, 255, 0.95);
+          margin: 1rem 2rem;
+          padding: 1rem;
+        }
+        
+        form {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          grid-auto-rows: auto;
+          grid-row-gap: .25rem;
+          margin-top: 1rem;
+        }
+        
+        label {
+          text-align: right;
+          margin-right: 1rem;
+        }
+
+        button {
+          align-self: center;
+          width: 150px;
+        }
+        
+        img {
+            height: 100%;
+            width: auto;
+            align-self: flex-start;
+          }
+
+          h3 {
+            line-height: 100%;
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
+          }
+        `}  
+    </style>
+      <h3>Add Keg</h3>
       <form>
         <label for=''>Name</label>
         <input type='text' name='beerName' value=''/>
@@ -32,8 +67,8 @@ function AddKeg(props) {
         <label for=''>Image</label>
         <input type='text' name='image' value='../assets/rum-barrel.jpeg' disabled/>
 
-        <h3>Beer Name </h3><p>{props.beername}</p>
-        <h4>Brand </h4>
+        <h5 style={{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
+        <h5>Brand </h5>
         <p>{props.brand}</p>
         <h5>Price per Pint </h5>
         <p>$ {props.price}</p>

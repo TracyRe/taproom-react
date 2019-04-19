@@ -6,13 +6,31 @@ import EditKeg from './EditKeg'
 
 function Admin(props) {
 
-  const Admin =  {
-    background: '#fff',
-  }
-
 
   return (
-    <div style={Admin}>
+    <div>
+    <style jsx>{`
+      
+      div {
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.95);
+        margin: 1rem 2rem;
+        padding: 1rem;
+      }
+
+      h3 {
+        line-height: 100%;
+        font-size: 1.15rem;
+        margin-bottom: .5rem;
+      }
+
+      button {
+        margin: 0 auto 0 auto;
+        width: 300px;
+      }
+
+      `}  
+    </style>
       <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
       <EditKeg/>
