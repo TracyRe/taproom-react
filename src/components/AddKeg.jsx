@@ -14,23 +14,23 @@ function AddKeg(props) {
     <div style={AddKeg}>
       <h2>Add Keg</h2>
       <form>
-        <label for="">Name</label>
-        <input type="text" name="beerName" value=""/>
+        <label for=''>Name</label>
+        <input type='text' name='beerName' value=''/>
 
-        <label for="">Brand</label>
-        <input type="text" name="beerBrand" value=""/>
+        <label for=''>Brand</label>
+        <input type='text' name='beerBrand' value=''/>
 
-        <label for="">Price per Pint</label>
-        <input type="number" name="beerPrice" value=""/>
+        <label for=''>Price per Pint</label>
+        <input type='number' name='beerPrice' value=''/>
 
-        <label for="">ABV</label>
-        <input type="number" name="beerAbv" value=""/>
+        <label for=''>ABV</label>
+        <input type='number' name='beerAbv' value=''/>
 
-        <label for="">Pints per Keg</label>
-        <input type="number" name="beerAbv" value="124" disabled/>
+        <label for=''>Pints per Keg</label>
+        <input type='number' name='beerAbv' value='124' disabled/>
 
-        <label for="">Image</label>
-        <input type="text" name="image" value={barrel} disabled/>
+        <label for=''>Image</label>
+        <input type='text' name='image' value='../assets/rum-barrel.jpeg' disabled/>
 
         <h3>Beer Name </h3><p>{props.beername}</p>
         <h4>Brand </h4>
