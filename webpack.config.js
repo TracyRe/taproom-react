@@ -40,8 +40,8 @@ module.exports = {
         options: {
           emitWarning: true,
           configFile: "./.eslintrc.json"
-          }
-        },
+        }
+      },
       {
         test: /\.jsx?$/,
         loader: "babel-loader",
@@ -55,6 +55,32 @@ module.exports = {
             "react-hot-loader/babel",
             "styled-jsx/babel"
           ]
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          // style-loader
+          { loader: 'style-loader' },
+          // css-loader
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          // sass-loader
+          { loader: 'sass-loader' }
+        ]
+      },
+      {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+          }
         }
       }
     ]
