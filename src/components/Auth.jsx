@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 function Auth(props) {
 
   const Auth =  {
-    background: '#fff',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
   }
 
 

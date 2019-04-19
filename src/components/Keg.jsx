@@ -13,10 +13,39 @@ function Keg(props) {
 
   return (
     <div style={Keg}>
+      <style jsx>{`
+        
+        div {
+          border-radius: 6px;
+          box-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 10px #fff;
+          padding: 1rem 0;
+        }
+        
+        img {
+            height: 100%;
+            width: 100%;
+            align-self: flex-start;
+          }
+
+          h3 {
+            line-height: 100%;
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
+          }
+
+          .brand {
+            font-style: italic;
+          }
+        `}  
+      </style>
+    
+    
       <img src={props.img} alt={props.beername} title={props.beername}/>
       <h3>{props.beername} -  ${props.price}</h3>
-      <p class="brand">{props.brand}</p>
+      <p className='brand'>{props.brand}</p>
       <p>ABV: {props.abv}%</p>
+      <button>Pull a Pint</button>
+      <button>Sell a Growler</button>
 
       <p>Pints remaining: {props.pints}</p>
 
