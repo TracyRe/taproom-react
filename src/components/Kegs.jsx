@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Keg from './Keg'
 import Auth from './Auth'
-import '../assets/fancy-barrel.jpg';
-import '../assets/whiskey-barrel.jpg';
-import '../assets/oak-barrel.jpg';
+import fancybarrel from '../assets/fancy-barrel.jpg';
+import whiskeybarrel from '../assets/whiskey-barrel.jpg';
+import oakbarrel from '../assets/oak-barrel.jpg';
 
 
 const kegList = [
   {
-    img:'../assets/fancy-barrel.jpg',
+    img: {fancybarrel},
     beername:'Fancy Beer',
     brand:'The Fanciest',
     price: 5,
@@ -17,7 +17,7 @@ const kegList = [
     pints: 124
   },
   {
-    img:'../assets/whiskey-barrel.jpg',
+    img: {whiskeybarrel},
     beername:'Pliny the Elder',
     brand:'Russian River',
     price: 9,
@@ -25,7 +25,7 @@ const kegList = [
     pints: 124
   },
   {
-    img:'../assets/oak-barrel.jpg',
+    img: {oakbarrel},
     beername:'Miller Lite',
     brand:'Miller',
     price: 3,

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import AddKeg from './AddKeg'
 import EditKeg from './EditKeg'
@@ -6,7 +7,7 @@ import EditKeg from './EditKeg'
 function Admin(props) {
 
   const Admin =  {
-    background: '#0f0',
+    background: '#fff',
   }
 
 
@@ -15,6 +16,7 @@ function Admin(props) {
       <h3>Admin is Working</h3>
       <AddKeg/>
       <EditKeg/>
+      <Link to='/'><button>Close Admin</button></Link>
     </div>
   )
 }
