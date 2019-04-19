@@ -13,10 +13,10 @@ function Admin(props) {
 
   return (
     <div style={Admin}>
-      <h3>Admin is Working</h3>
+      <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
       <EditKeg/>
-      <Link to='/'><button>Close Admin</button></Link>
+      <Link to='/'><button>Close Keg Management</button></Link>
     </div>
   )
 }
