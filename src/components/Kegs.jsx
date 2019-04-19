@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Keg from './Keg'
 import Auth from './Auth'
-import '../assets/fancy-barrel.jpg'
+import '../assets/fancy-barrel.jpg';
+import '../assets/whiskey-barrel.jpg';
+import '../assets/oak-barrel.jpg';
 
 
 const kegList = [
