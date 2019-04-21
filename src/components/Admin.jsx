@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import AddKeg from './AddKeg'
 import EditKeg from './EditKeg'
@@ -9,7 +9,7 @@ function Admin(props) {
 
   return (
     <div>
-    <style jsx>{`
+      <style jsx>{`
       
       div {
         border-radius: 4px;
@@ -30,7 +30,7 @@ function Admin(props) {
       }
 
       `}  
-    </style>
+      </style>
       <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
       <EditKeg/>

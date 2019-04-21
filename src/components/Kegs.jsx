@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Keg from './Keg'
-import Auth from './Auth'
-import fancybarrel from '../assets/fancy-barrel.jpg';
-import whiskeybarrel from '../assets/whiskey-barrel.jpg';
-import oakbarrel from '../assets/oak-barrel.jpg';
+import fancybarrel from '../assets/fancy-barrel.jpg'
+import whiskeybarrel from '../assets/whiskey-barrel.jpg'
+import oakbarrel from '../assets/oak-barrel.jpg'
 
 
 const kegList = [
@@ -39,7 +38,7 @@ function Kegs() {
 
   return (
     <div>
-    <style jsx>{`
+      <style jsx>{`
 
         .menu {
           display: grid;
@@ -57,19 +56,19 @@ function Kegs() {
           border-radius: 10px;
           text-align: center;
         }
-      `}  
-    </style>
-    <div className='menu'>
+      `}
+      </style>
+      <div className='menu'>
 
-      {kegList.map((keg, index) =>
-        <Keg img={keg.img}
-          beername={keg.beername}
-          brand={keg.brand}
-          price={keg.price}
-          abv={keg.abv}
-          pints={keg.pints}
-          key={index}/>
-      )}
+        {kegList.map((keg, index) =>
+          <Keg img={keg.img}
+            beername={keg.beername}
+            brand={keg.brand}
+            price={keg.price}
+            abv={keg.abv}
+            pints={keg.pints}
+            key={index}/>
+        )}
       </div>
       <div>
         <Auth />

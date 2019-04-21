@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import barrel from '../assets/rum-barrel.jpeg';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import barrel from '../assets/rum-barrel.jpeg'
 
 function AddKeg(props) {
 
@@ -46,7 +46,7 @@ function AddKeg(props) {
             margin-bottom: .5rem;
           }
         `}  
-    </style>
+      </style>
       <h3>Add Keg</h3>
       <form>
         <label for=''>Name</label>

@@ -1,88 +1,68 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 
 
 function KegChange(props) {
 
   return (
-    <div>
+    <form>
       <style jsx>{`
-        
-        div {
-          border-radius: 4px;
-          background: rgba(255, 255, 255, 0.95);
-          margin: 1rem 2rem;
-          padding: 1rem;
-        }
-        
-        form {
-          width: 100%;
-          display: grid;
-          grid-auto-columns: 100px 240px;
-          grid-auto-flow: column;
-          grid-auto-rows: 22px;
-          grid-row-gap: .25rem;
-          margin-top: 1rem;
-        }
-        
-        label {
-          text-align: right;
-          margin-right: .25rem;
-        }
-        
-        label + input {
-          margin-right: .5rem;
-        }
 
         button {
           align-self: center;
           width: 150px;
         }
-        
+
+        form {
+          height: 25px;
+        }
+
+        td {
+          border: 1px solid #ccc;
+          padding: 0 .5rem;
+          margin: 0;
+          height: 24px;
+        }
+
         img {
-            height: 100%;
-            width: auto;
-            align-self: flex-start;
-          }
+          height: 100%;
+          width: auto;
+          align-self: flex-start;
+        }
 
-          h3 {
-            line-height: 100%;
-            font-size: 1.15rem;
-            margin-bottom: .5rem;
-          }
-        `} 
+        h3 {
+          line-height: 100%;
+          font-size: 1.15rem;
+          margin-bottom: .5rem;
+        }
+      `}
       </style>
-      <form>
-        <div>
-          <label for=''>Name</label>
-          <input type='text' name='beerName' value={props.beername}/>
-        </div>
-        <div>
-          <label for=''>Brand</label>
-          <input type='text' name='beerBrand' value={props.brand}/>
-        </div>
-        <div>
-          <label for=''>Price / Pint</label>
-          <input type='number' name='beerPrice' value={props.price}/>
-        </div>
-        <div>
-          <label for=''>ABV</label>
-          <input type='number' name='beerAbv' value={props.abv}/>
-        </div>
-        <div>
-          <label for=''>Pints / Keg</label>
-          <input type='number' name='beerAbv' value='124' disabled/>
-        </div>
-        <div>
-          <label for=''>Image</label>
-          <input type='text' name='image' value={props.img} disabled/>
-        </div>
-        <button> Save Changes</button>
 
-      </form>
-    </div>
+      <tr>
+        <td>
+          <input type='text' name='beerName' value={props.beername}/>Hello
+        </td>
+        <td>
+          <input type='text' name='beerBrand' value={props.brand}/>efea
+        </td>
+        <td>
+          <input type='number' name='beerPrice' value={props.price}/>fdafda
+        </td>
+        <td>
+          <input type='number' name='beerAbv' value={props.abv}/>fdafda
+        </td>
+        <td>
+          <input type='number' name='beerPints' value={props.pints}/>fdafda
+        </td>
+        <td>
+          <input type='text' name='image' value={props.img} disabled/>fdafda
+        </td>
+        <td>
+          <button> Save Changes</button>
+        </td>
+      </tr>
+    </form>
   )
 }
 

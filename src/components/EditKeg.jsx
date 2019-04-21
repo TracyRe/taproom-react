@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import KegChange from './KegChange';
-import fancybarrel from '../assets/fancy-barrel.jpg';
-import whiskeybarrel from '../assets/whiskey-barrel.jpg';
-import oakbarrel from '../assets/oak-barrel.jpg';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import KegChange from './KegChange'
+import fancybarrel from '../assets/fancy-barrel.jpg'
+import whiskeybarrel from '../assets/whiskey-barrel.jpg'
+import oakbarrel from '../assets/oak-barrel.jpg'
 
 const kegList = [
   {
@@ -38,41 +37,28 @@ function EditKeg(props) {
 
   return (
     <div>
-    <style jsx>{`
-      
-      div {
-        border-radius: 4px;
-        background: rgba(255, 255, 255, 0.95);
-        margin: 1rem 2rem;
-        padding: 1rem;
-      }
-      
-      form {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-auto-rows: auto;
-        grid-row-gap: .25rem;
-        margin-top: 1rem;
-      }
-      
-      label {
-        text-align: right;
-        margin-right: .5rem;
-      }
-      
-      label + input {
-        margin-right: 2rem;
-      }
+      <style jsx>{`
 
-      button {
-        align-self: center;
-        width: 150px;
-      }
-      
-      img {
-          height: 100%;
-          width: auto;
-          align-self: flex-start;
+        table, th, tr, td {
+          border-collapse: collapse;
+        }
+
+        table {
+          cellspacing: 0;
+          cellpadding: 0;
+          margin-bottom: 1rem;
+          background: #fff;
+        }
+
+        td {
+          border: 1px solid #ccc;
+          padding: 0 .5rem;
+          margin: 0;
+          height: 24px;
+        }
+
+        input {
+          height: 22px;
         }
 
         h3 {
@@ -80,30 +66,45 @@ function EditKeg(props) {
           font-size: 1.15rem;
           margin-bottom: .5rem;
         }
-      `} 
+      `}
       </style>
       <h3>Edit Keg</h3>
-      {kegList.map((keg, index) =>
-        <KegChange
-          img={keg.img}
-          beername={keg.beername}
-          brand={keg.brand}
-          price={keg.price}
-          abv={keg.abv}
-          pints={keg.pints}
-          key={index}/>
-      )}
+      <table>
+        <th>
+          <td>
+            Name
+          </td>
+          <td>
+            Brand
+          </td>
+          <td>
+            Price / Pint
+          </td>
+          <td>
+            ABV
+          </td>
+          <td>
+            Pints / Keg
+          </td>
+          <td>
+            Image
+          </td>
+          <td>
+          </td>
+        </th>
+        {kegList.map((keg, index) =>
+          <KegChange
+            beername={keg.beername}
+            brand={keg.brand}
+            price={keg.price}
+            abv={keg.abv}
+            pints={keg.pints}
+            img={keg.img}
+            key={index}/>
+        )}
+      </table>
     </div>
   )
-}
-
-EditKeg.propTypes = {
-  img: PropTypes.string,
-  beername: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.number,
-  abv: PropTypes.number,
-  pints: PropTypes.number
 }
 
 

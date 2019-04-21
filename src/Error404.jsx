@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function Error404(props) {
 
@@ -19,6 +19,6 @@ function Error404(props) {
 
 Error404.propTypes = {
   location: PropTypes.object
-};
+}
 
 export default Error404

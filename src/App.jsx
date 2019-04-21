@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
-import Kegs from './components/Kegs';
-import Admin from './components/Admin';
-import Error404 from './Error404';
-import bgimg from './assets/patrick-tomasso-499112-unsplash.jpg';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Header from './components/Header'
+import Kegs from './components/Kegs'
+import Admin from './components/Admin'
+import Error404 from './Error404'
+import bgimg from './assets/patrick-tomasso-499112-unsplash.jpg'
 
 function App() {
   return (
 
-      <div>
+    <div>
       <style global jsx>{`
         * {
           padding: 0;
@@ -58,12 +58,12 @@ function App() {
         `}
       </style>
       <Header/>
-        <Switch>
-          <Route exact path='/' component={Kegs}/>
-          <Route path='/admin' component={Admin}/>
-          <Route component={Error404} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path='/' component={Kegs}/>
+        <Route path='/admin' component={Admin}/>
+        <Route component={Error404} />
+      </Switch>
+    </div>
 
   )
 }
