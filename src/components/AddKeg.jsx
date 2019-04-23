@@ -8,14 +8,14 @@ function AddKeg(props) {
   return (
     <div>
       <style jsx>{`
-        
+
         div {
           border-radius: 4px;
           background: rgba(255, 255, 255, 0.95);
           margin: 1rem 2rem;
           padding: 1rem;
         }
-        
+
         form {
           display: grid;
           grid-template-columns: 1fr 2fr;
@@ -23,7 +23,7 @@ function AddKeg(props) {
           grid-row-gap: .25rem;
           margin-top: 1rem;
         }
-        
+
         label {
           text-align: right;
           margin-right: 1rem;
@@ -33,7 +33,7 @@ function AddKeg(props) {
           align-self: center;
           width: 150px;
         }
-        
+
         img {
             height: 100%;
             width: auto;
@@ -45,36 +45,36 @@ function AddKeg(props) {
             font-size: 1.15rem;
             margin-bottom: .5rem;
           }
-        `}  
+        `}
       </style>
       <h3>Add Keg</h3>
       <form>
-        <label for=''>Name</label>
-        <input type='text' name='beerName' value=''/>
+        <label htmlFor = ''>Name</label>
+        <input type = 'text' name = 'beerName' value = ''/>
 
-        <label for=''>Brand</label>
-        <input type='text' name='beerBrand' value=''/>
+        <label htmlFor = ''>Brand</label>
+        <input type = 'text' name = 'beerBrand' value = ''/>
 
-        <label for=''>Price per Pint</label>
-        <input type='number' name='beerPrice' value=''/>
+        <label htmlFor = ''>Price per Pint</label>
+        <input type = 'number' name = 'beerPrice' value = ''/>
 
-        <label for=''>ABV</label>
-        <input type='number' name='beerAbv' value=''/>
+        <label htmlFor = ''>ABV</label>
+        <input type = 'number' name = 'beerAbv' value = ''/>
 
-        <label for=''>Pints per Keg</label>
-        <input type='number' name='beerAbv' value='124' disabled/>
+        <label htmlFor = ''>Pints per Keg</label>
+        <input type = 'number' name = 'beerAbv' value = '124' disabled/>
 
-        <label for=''>Image</label>
-        <input type='text' name='image' value='../assets/rum-barrel.jpeg' disabled/>
+        <label htmlFor = ''>Image</label>
+        <input type = 'text' name = 'image' value = '../assets/rum-barrel.jpeg' disabled/>
 
-        <h5 style={{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
+        <h5 style = {{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
         <h5>Brand </h5>
         <p>{props.brand}</p>
         <h5>Price per Pint </h5>
         <p>$ {props.price}</p>
         <h5>ABV </h5>
         <p>{props.abv} %</p>
-        <h5><strong>Image</strong></h5> <img src={barrel}/>
+        <h5><strong>Image</strong></h5> <img src = {barrel}/>
 
         <button> Add Keg</button>
 

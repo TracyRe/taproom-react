@@ -34,7 +34,7 @@ function Admin(props) {
       <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
       <EditKeg/>
-      <Link to='/'><button>Close Keg Management</button></Link>
+      <Link to = '/'><button>Close Keg Management</button></Link>
     </div>
   )
 }

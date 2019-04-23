@@ -11,8 +11,8 @@ function Auth(props) {
 
 
   return (
-    <div style={Auth}>
-      <Link to='admin'><button>Employees Only</button></Link>
+    <div style = {Auth}>
+      <Link to = 'admin'><button>Employees Only</button></Link>
     </div>
   )
 }

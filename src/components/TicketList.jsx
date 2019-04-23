@@ -25,10 +25,10 @@ function TicketList() {
     <div>
       <hr/>
       {masterTicketList.map((ticket,index) =>
-        <Ticket names={ticket.names}
-          location={ticket.location}
-          issue={ticket.issue}
-          key={index}
+        <Ticket names = {ticket.names}
+          location = {ticket.location}
+          issue = {ticket.issue}
+          key = {index}
         />
       )}
     </div>

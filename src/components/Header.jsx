@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <div>
-      <Link to='/'><h1 style={Header}>Welcome to Portland Tap Room</h1></Link>
+      <Link to = '/'><h1 style = {Header}>Welcome to Portland Tap Room</h1></Link>
     </div>
   )
 }

@@ -59,9 +59,9 @@ function App() {
       </style>
       <Header/>
       <Switch>
-        <Route exact path='/' component={Kegs}/>
-        <Route path='/admin' component={Admin}/>
-        <Route component={Error404} />
+        <Route exact path = '/' component = {Kegs}/>
+        <Route path = '/admin' component = {Admin}/>
+        <Route component = {Error404} />
       </Switch>
     </div>
 

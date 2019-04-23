@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Keg from './Keg'
+import Auth from './Auth'
 import fancybarrel from '../assets/fancy-barrel.jpg'
 import whiskeybarrel from '../assets/whiskey-barrel.jpg'
 import oakbarrel from '../assets/oak-barrel.jpg'
@@ -8,7 +9,7 @@ import oakbarrel from '../assets/oak-barrel.jpg'
 
 const kegList = [
   {
-    img: {fancybarrel},
+    img: fancybarrel,
     beername:'Fancy Beer',
     brand:'The Fanciest',
     price: 5,
@@ -16,7 +17,7 @@ const kegList = [
     pints: 124
   },
   {
-    img: {whiskeybarrel},
+    img: whiskeybarrel,
     beername:'Pliny the Elder',
     brand:'Russian River',
     price: 9,
@@ -24,7 +25,7 @@ const kegList = [
     pints: 124
   },
   {
-    img: {oakbarrel},
+    img: oakbarrel,
     beername:'Miller Lite',
     brand:'Miller',
     price: 3,
@@ -58,16 +59,16 @@ function Kegs() {
         }
       `}
       </style>
-      <div className='menu'>
+      <div className = 'menu'>
 
         {kegList.map((keg, index) =>
-          <Keg img={keg.img}
-            beername={keg.beername}
-            brand={keg.brand}
-            price={keg.price}
-            abv={keg.abv}
-            pints={keg.pints}
-            key={index}/>
+          <Keg img = {keg.img}
+            beername = {keg.beername}
+            brand = {keg.brand}
+            price = {keg.price}
+            abv = {keg.abv}
+            pints = {keg.pints}
+            key = {index}/>
         )}
       </div>
       <div>

@@ -39,7 +39,7 @@ function EditKeg(props) {
     <div>
       <style jsx>{`
 
-        table, th, tr, td {
+        table, thead, th, tr, td {
           border-collapse: collapse;
         }
 
@@ -70,37 +70,37 @@ function EditKeg(props) {
       </style>
       <h3>Edit Keg</h3>
       <table>
-        <th>
-          <td>
-            Name
-          </td>
-          <td>
-            Brand
-          </td>
-          <td>
-            Price / Pint
-          </td>
-          <td>
-            ABV
-          </td>
-          <td>
-            Pints / Keg
-          </td>
-          <td>
-            Image
-          </td>
-          <td>
-          </td>
-        </th>
+        <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Brand
+            </th>
+            <th>
+              Price / Pint
+            </th>
+            <th>
+              ABV
+            </th>
+            <th>
+              Pints / Keg
+            </th>
+            <th>
+              Image
+            </th>
+          </tr>
+        </thead>
         {kegList.map((keg, index) =>
           <KegChange
-            beername={keg.beername}
-            brand={keg.brand}
-            price={keg.price}
-            abv={keg.abv}
-            pints={keg.pints}
-            img={keg.img}
-            key={index}/>
+            beername = {keg.beername}
+            brand = {keg.brand}
+            price = {keg.price}
+            abv = {keg.abv}
+            pints = {keg.pints}
+            img = {keg.img}
+            key = {index}/>
         )}
       </table>
     </div>

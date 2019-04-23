@@ -41,22 +41,22 @@ function KegChange(props) {
 
       <tr>
         <td>
-          <input type='text' name='beerName' value={props.beername}/>Hello
+          <input type = 'text' name = 'beerName' value = {props.beername}/>Hello
         </td>
         <td>
-          <input type='text' name='beerBrand' value={props.brand}/>efea
+          <input type = 'text' name = 'beerBrand' value = {props.brand}/>efea
         </td>
         <td>
-          <input type='number' name='beerPrice' value={props.price}/>fdafda
+          <input type = 'number' name = 'beerPrice' value = {props.price}/>fdafda
         </td>
         <td>
-          <input type='number' name='beerAbv' value={props.abv}/>fdafda
+          <input type = 'number' name = 'beerAbv' value = {props.abv}/>fdafda
         </td>
         <td>
-          <input type='number' name='beerPints' value={props.pints}/>fdafda
+          <input type = 'number' name = 'beerPints' value = {props.pints}/>fdafda
         </td>
         <td>
-          <input type='text' name='image' value={props.img} disabled/>fdafda
+          <input type = 'text' name = 'image' value = {props.img} disabled/>fdafda
         </td>
         <td>
           <button> Save Changes</button>

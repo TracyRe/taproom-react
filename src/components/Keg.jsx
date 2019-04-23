@@ -12,7 +12,7 @@ function Keg(props) {
 
 
   return (
-    <div style={Keg}>
+    <div style = {Keg}>
       <style jsx>{`
         
         div {
@@ -40,9 +40,9 @@ function Keg(props) {
       </style>
     
     
-      <img src={props.img} alt={props.beername} title={props.beername}/>
+      <img src = {props.img} alt = {props.beername} title = {props.beername}/>
       <h3>{props.beername} -  ${props.price}</h3>
-      <p className='brand'>{props.brand}</p>
+      <p className = 'brand'>{props.brand}</p>
       <p>ABV: {props.abv}%</p>
       <button>Pull a Pint</button>
       <button>Sell a Growler</button>
