@@ -7,7 +7,7 @@ import oakbarrel from '../assets/oak-barrel.jpg'
 
 const kegList = [
   {
-    img: {fancybarrel},
+    img: fancybarrel,
     beername:'Fancy Beer',
     brand:'The Fanciest',
     price: 5,
@@ -15,7 +15,7 @@ const kegList = [
     pints: 124
   },
   {
-    img: {whiskeybarrel},
+    img: whiskeybarrel,
     beername:'Pliny the Elder',
     brand:'Russian River',
     price: 9,
@@ -23,7 +23,7 @@ const kegList = [
     pints: 124
   },
   {
-    img: {oakbarrel},
+    img: oakbarrel,
     beername:'Miller Lite',
     brand:'Miller',
     price: 3,
@@ -36,30 +36,30 @@ const kegList = [
 function EditKeg(props) {
 
   return (
-    <div>
+    <div className='outer'>
       <style jsx>{`
 
-        table, thead, th, tr, td {
-          border-collapse: collapse;
+        .outer {
+          border-radius: 4px;
+          background: rgba(255, 255, 255, 0.95);
+          margin: 1rem 2rem;
+          padding: 1rem;
         }
 
-        table {
-          cellspacing: 0;
-          cellpadding: 0;
-          margin-bottom: 1rem;
-          background: #fff;
-        }
-
-        td {
-          border: 1px solid #ccc;
-          padding: 0 .5rem;
-          margin: 0;
-          height: 24px;
+        .datagrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 80px 60px 80px 1fr 150px;
+          grid-auto-flow: column;
+          font-size: .75rem;
+          font-weight: bold;
+          text-transform: uppercase;
         }
 
         input {
           height: 22px;
+          width: 100%;
         }
+
 
         h3 {
           line-height: 100%;
@@ -69,29 +69,16 @@ function EditKeg(props) {
       `}
       </style>
       <h3>Edit Keg</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Brand
-            </th>
-            <th>
-              Price / Pint
-            </th>
-            <th>
-              ABV
-            </th>
-            <th>
-              Pints / Keg
-            </th>
-            <th>
-              Image
-            </th>
-          </tr>
-        </thead>
+      <div className='datagrid'>
+        <div>Name</div>
+        <div>Brand</div>
+        <div>Price / Pint</div>
+        <div>ABV</div>
+        <div>Pints / Keg</div>
+        <div>Image</div>
+        <div></div>
+      </div>
+
         {kegList.map((keg, index) =>
           <KegChange
             beername = {keg.beername}
@@ -102,7 +89,7 @@ function EditKeg(props) {
             img = {keg.img}
             key = {index}/>
         )}
-      </table>
+
     </div>
   )
 }

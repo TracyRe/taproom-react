@@ -11,19 +11,19 @@ function KegChange(props) {
 
         button {
           align-self: center;
-          width: 150px;
+          width: 140px;
+          font-size: .75rem;
+          padding: .25rem 0;
         }
+
 
         form {
-          height: 25px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 80px 60px 80px 1fr 150px;
+          grid-auto-flow: row;
         }
 
-        td {
-          border: 1px solid #ccc;
-          padding: 0 .5rem;
-          margin: 0;
-          height: 24px;
-        }
+
 
         img {
           height: 100%;
@@ -36,32 +36,21 @@ function KegChange(props) {
           font-size: 1.15rem;
           margin-bottom: .5rem;
         }
+
+        input {
+          padding: 0 .25rem;
+        }
       `}
       </style>
 
-      <tr>
-        <td>
-          <input type = 'text' name = 'beerName' value = {props.beername}/>Hello
-        </td>
-        <td>
-          <input type = 'text' name = 'beerBrand' value = {props.brand}/>efea
-        </td>
-        <td>
-          <input type = 'number' name = 'beerPrice' value = {props.price}/>fdafda
-        </td>
-        <td>
-          <input type = 'number' name = 'beerAbv' value = {props.abv}/>fdafda
-        </td>
-        <td>
-          <input type = 'number' name = 'beerPints' value = {props.pints}/>fdafda
-        </td>
-        <td>
-          <input type = 'text' name = 'image' value = {props.img} disabled/>fdafda
-        </td>
-        <td>
+
+          <input type = 'text' name = 'beerName' value = {props.beername}/>
+          <input type = 'text' name = 'beerBrand' value = {props.brand}/>
+          <input type = 'number' name = 'beerPrice' value = {props.price}/>
+          <input type = 'number' name = 'beerAbv' value = {props.abv}/>
+          <input type = 'number' name = 'beerPints' value = {props.pints}/>
+          <input type = 'text' name = 'image' value = {props.img} disabled/>
           <button> Save Changes</button>
-        </td>
-      </tr>
     </form>
   )
 }

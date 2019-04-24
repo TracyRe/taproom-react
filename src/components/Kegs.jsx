@@ -40,7 +40,6 @@ function Kegs() {
   return (
     <div>
       <style jsx>{`
-
         .menu {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -49,12 +48,12 @@ function Kegs() {
           align-content: center;
           grid-column-gap: 2rem;
           grid-row-gap: 2rem;
-          margin: 1rem auto;
-          padding: 2rem;
-          width: 80vw;
           background: rgba(255, 255, 255, 0.85);
           box-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 10px #fff;
           border-radius: 10px;
+          margin: 1rem auto;
+          padding: 2rem;
+          width: 80vw;
           text-align: center;
         }
       `}

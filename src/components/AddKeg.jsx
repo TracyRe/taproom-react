@@ -13,7 +13,7 @@ function AddKeg(props) {
           border-radius: 4px;
           background: rgba(255, 255, 255, 0.95);
           margin: 1rem 2rem;
-          padding: 1rem;
+          padding: 1rem 1rem 0 1rem;
         }
 
         form {
@@ -32,6 +32,13 @@ function AddKeg(props) {
         button {
           align-self: center;
           width: 150px;
+        }
+
+        .buttonrow {
+          grid-column: 1 / span 2;
+          display: flex;
+          justify-content: center;
+          padding: 0;
         }
 
         img {
@@ -75,8 +82,9 @@ function AddKeg(props) {
         <h5>ABV </h5>
         <p>{props.abv} %</p>
         <h5><strong>Image</strong></h5> <img src = {barrel}/>
-
-        <button> Add Keg</button>
+        <div className='buttonrow'>
+          <button> Add Keg</button>
+        </div>
 
       </form>
     </div>

@@ -10,8 +10,12 @@ function Admin(props) {
   return (
     <div>
       <style jsx>{`
-      
+
       div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.95);
         margin: 1rem 2rem;
@@ -29,7 +33,7 @@ function Admin(props) {
         width: 300px;
       }
 
-      `}  
+      `}
       </style>
       <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
