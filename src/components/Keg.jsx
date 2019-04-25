@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 function Keg(props) {
 
   const Keg =  {
-    background: 'rgba(255, 255, 255, 1.0);',
+    background: 'rgba(255, 255, 255, 0)',
   }
 
 

@@ -44,13 +44,13 @@ function KegChange(props) {
       </style>
 
 
-          <input type = 'text' name = 'beerName' value = {props.beername}/>
-          <input type = 'text' name = 'beerBrand' value = {props.brand}/>
-          <input type = 'number' name = 'beerPrice' value = {props.price}/>
-          <input type = 'number' name = 'beerAbv' value = {props.abv}/>
-          <input type = 'number' name = 'beerPints' value = {props.pints}/>
-          <input type = 'text' name = 'image' value = {props.img} disabled/>
-          <button> Save Changes</button>
+      <input type = 'text' name = 'beerName' value = {props.beername}/>
+      <input type = 'text' name = 'beerBrand' value = {props.brand}/>
+      <input type = 'number' name = 'beerPrice' value = {props.price}/>
+      <input type = 'number' name = 'beerAbv' value = {props.abv}/>
+      <input type = 'number' name = 'beerPints' value = {props.pints}/>
+      <input type = 'text' name = 'image' value = {props.img} disabled/>
+      <button> Save Changes</button>
     </form>
   )
 }

@@ -82,7 +82,7 @@ function AddKeg(props) {
         <h5>ABV </h5>
         <p>{props.abv} %</p>
         <h5><strong>Image</strong></h5> <img src = {barrel}/>
-        <div className='buttonrow'>
+        <div className = 'buttonrow'>
           <button> Add Keg</button>
         </div>
 

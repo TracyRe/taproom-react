@@ -37,7 +37,7 @@ function Admin(props) {
       </style>
       <h2>Employees Only - Keg Management</h2>
       <AddKeg/>
-      <EditKeg/>
+      <EditKeg kegList = {props.kegList}/>
       <Link to = '/'><button>Close Keg Management</button></Link>
     </div>
   )
@@ -45,6 +45,7 @@ function Admin(props) {
 
 Admin.propTypes = {
   admin: PropTypes.string,
+  kegList: PropTypes.array
 }
 
 export default Admin
