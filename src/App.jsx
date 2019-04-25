@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import Header from './components/Header'
-import Kegs from './components/Kegs'
-import Admin from './components/Admin'
-import Error404 from './Error404'
-import bgimg from './assets/patrick-tomasso-499112-unsplash.jpg'
-import fancybarrel from './assets/fancy-barrel.jpg'
-import whiskeybarrel from './assets/whiskey-barrel.jpg'
-import oakbarrel from './assets/oak-barrel.jpg'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import Kegs from './components/Kegs';
+import Admin from './components/Admin';
+import Error404 from './Error404';
+import bgimg from './assets/patrick-tomasso-499112-unsplash.jpg';
+import fancybarrel from './assets/fancy-barrel.jpg';
+import whiskeybarrel from './assets/whiskey-barrel.jpg';
+import oakbarrel from './assets/oak-barrel.jpg';
 
 class App extends React.Component  {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state =  {
       masterKegList:   [
         {
@@ -21,7 +21,7 @@ class App extends React.Component  {
           brand:'The Fanciest',
           price: 5,
           abv: 4.8,
-          pints: 124
+          pintCount: 124
         },
         {
           img: whiskeybarrel,
@@ -29,7 +29,7 @@ class App extends React.Component  {
           brand:'Russian River',
           price: 9,
           abv: 5.5,
-          pints: 124
+          pintCount: 124
         },
         {
           img: oakbarrel,
@@ -37,11 +37,20 @@ class App extends React.Component  {
           brand:'Miller',
           price: 3,
           abv: 3.4,
-          pints: 124
+          pintCount: 124
         }
-      ]
-    }
+      ],
+
+    };
+    this.handleSellPint = this.handleSellPint.bind(this);
   }
+
+
+  handleSellPint(newPintCount) {
+    // let newPintCount = {this.state.pintCount};
+    this.setState({pintCount: newPintCount});
+  }
+
   render() {
     return (
 
@@ -95,14 +104,22 @@ class App extends React.Component  {
         </style>
         <Header/>
         <Switch>
-          <Route exact path = '/' render = {()=><Kegs kegList = {this.state.masterKegList}/>}/>
-          <Route path = '/admin'  render = {()=><Admin kegList = {this.state.masterKegList}/>}/>
+          <Route exact path = '/' render = {()=><Kegs
+            kegList = {this.state.masterKegList}
+            newPintCount = {this.state.pintCount}
+            onSellPint = {this.handleSellPint}/>}/>
+          <Route path = '/admin' render = {()=><Admin kegList = {this.state.masterKegList}/>}/>
           <Route component = {Error404} />
         </Switch>
       </div>
 
-    )
+    );
   }
 }
 
-export default App
+
+export default App;
+
+
+// newPintCount = {this.state.pintCount}
+// onShowPintCount = {this.handleShowPintCount}

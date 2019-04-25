@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import AddKeg from './AddKeg'
-import EditKeg from './EditKeg'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import AddKeg from './AddKeg';
+import EditKeg from './EditKeg';
 
 function Admin(props) {
 
@@ -40,12 +40,12 @@ function Admin(props) {
       <EditKeg kegList = {props.kegList}/>
       <Link to = '/'><button>Close Keg Management</button></Link>
     </div>
-  )
+  );
 }
 
 Admin.propTypes = {
   admin: PropTypes.string,
   kegList: PropTypes.array
-}
+};
 
-export default Admin
+export default Admin;

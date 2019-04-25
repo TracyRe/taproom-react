@@ -1,5 +1,5 @@
-import React from 'react'
-import Ticket from './Ticket'
+import React from 'react';
+import Ticket from './Ticket';
 
 
 const masterTicketList = [
@@ -18,7 +18,7 @@ const masterTicketList = [
     location: '9F',
     issue: 'Donkey picture not displaying on hover in Zoology app. :('
   },
-]
+];
 
 function TicketList() {
   return (
@@ -32,7 +32,7 @@ function TicketList() {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default TicketList
+export default TicketList;

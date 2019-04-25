@@ -1,8 +1,8 @@
-import React from 'react'
-import Header from './components/Header'
-import TicketList from './TicketList'
-import NewTicketForm from './NewTicketForm'
-import { Switch, Route } from 'react-router-dom'
+import React from 'react';
+import Header from './components/Header';
+import TicketList from './TicketList';
+import NewTicketForm from './NewTicketForm';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path = '/newticket' component = {NewTicketForm} />
       </Switch>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

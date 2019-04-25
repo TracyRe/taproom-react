@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
 
@@ -19,7 +19,7 @@ function KegChange(props) {
 
         form {
           display: grid;
-          grid-template-columns: 1fr 1fr 80px 60px 80px 1fr 150px;
+          grid-template-columns: 1fr 1fr 80px 60px 1fr 150px;
           grid-auto-flow: row;
         }
 
@@ -48,11 +48,10 @@ function KegChange(props) {
       <input type = 'text' name = 'beerBrand' value = {props.brand}/>
       <input type = 'number' name = 'beerPrice' value = {props.price}/>
       <input type = 'number' name = 'beerAbv' value = {props.abv}/>
-      <input type = 'number' name = 'beerPints' value = {props.pints}/>
       <input type = 'text' name = 'image' value = {props.img} disabled/>
       <button> Save Changes</button>
     </form>
-  )
+  );
 }
 
 KegChange.propTypes = {
@@ -62,6 +61,6 @@ KegChange.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   pints: PropTypes.number
-}
+};
 
-export default KegChange
+export default KegChange;

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Keg from './Keg'
-import Auth from './Auth'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Keg from './Keg';
+import Auth from './Auth';
 
 
 
@@ -37,19 +37,24 @@ function Kegs(props) {
             brand = {keg.brand}
             price = {keg.price}
             abv = {keg.abv}
-            pints = {keg.pints}
-            key = {index}/>
+            key = {keg.id}
+            pintCount = {keg.pintCount}
+            newPintCount = {props.newPintCount}
+            onSellPint = {props.onSellPint}
+          />
         )}
       </div>
       <div>
         <Auth />
       </div>
     </div>
-  )
+  );
 }
 
 Kegs.propTypes = {
-  kegList: PropTypes.array
-}
+  kegList: PropTypes.array,
+  newPintCount: PropTypes.number,
+  onSellPint: PropTypes.func,
+};
 
-export default Kegs
+export default Kegs;

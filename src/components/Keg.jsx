@@ -1,15 +1,20 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
 function Keg(props) {
 
-  const Keg =  {
-    background: 'rgba(255, 255, 255, 0)',
+
+  function sellPint() {
+    let newPints = props.pintCount;
+    newPints--;
+    props.onSellPint(newPintCount);
   }
 
+
+  const Keg =  {
+    background: 'rgba(255, 255, 255, 0)'
+  };
 
   return (
     <div style = {Keg}>
@@ -44,13 +49,13 @@ function Keg(props) {
       <h3>{props.beername} -  ${props.price}</h3>
       <p className = 'brand'>{props.brand}</p>
       <p>ABV: {props.abv}%</p>
-      <button>Pull a Pint</button>
+      <button onClick = {sellPint}>Pull a Pint</button>
       <button>Sell a Growler</button>
 
-      <p>Pints remaining: {props.pints}</p>
+      <p>Pints remaining: {props.newPints}</p>
 
     </div>
-  )
+  );
 }
 
 Keg.propTypes = {
@@ -59,7 +64,12 @@ Keg.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
-  pints: PropTypes.number
-}
+  pintCount: PropTypes.number,
+  onSellPint: PropTypes.func,
+  newPintCount: PropTypes.number,
 
-export default Keg
+//  onShowPintCount: PropTypes.func,
+
+};
+
+export default Keg;

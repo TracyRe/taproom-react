@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import barrel from '../assets/rum-barrel.jpeg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import barrel from '../assets/rum-barrel.jpeg';
 
 function AddKeg(props) {
 
@@ -68,9 +67,6 @@ function AddKeg(props) {
         <label htmlFor = ''>ABV</label>
         <input type = 'number' name = 'beerAbv' value = ''/>
 
-        <label htmlFor = ''>Pints per Keg</label>
-        <input type = 'number' name = 'beerAbv' value = '124' disabled/>
-
         <label htmlFor = ''>Image</label>
         <input type = 'text' name = 'image' value = '../assets/rum-barrel.jpeg' disabled/>
 
@@ -88,7 +84,7 @@ function AddKeg(props) {
 
       </form>
     </div>
-  )
+  );
 }
 
 AddKeg.propTypes = {
@@ -98,6 +94,6 @@ AddKeg.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   pints: PropTypes.number
-}
+};
 
-export default AddKeg
+export default AddKeg;

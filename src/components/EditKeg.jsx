@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import KegChange from './KegChange'
+import React from 'react';
+import PropTypes from 'prop-types';
+import KegChange from './KegChange';
 
 
 function EditKeg(props) {
@@ -19,7 +18,7 @@ function EditKeg(props) {
 
         .datagrid {
           display: grid;
-          grid-template-columns: 1fr 1fr 80px 60px 80px 1fr 150px;
+          grid-template-columns: 1fr 1fr 80px 60px 1fr 150px;
           grid-auto-flow: column;
           font-size: .75rem;
           font-weight: bold;
@@ -45,7 +44,6 @@ function EditKeg(props) {
         <div>Brand</div>
         <div>Price / Pint</div>
         <div>ABV</div>
-        <div>Pints / Keg</div>
         <div>Image</div>
         <div />
       </div>
@@ -56,18 +54,17 @@ function EditKeg(props) {
           brand = {keg.brand}
           price = {keg.price}
           abv = {keg.abv}
-          pints = {keg.pints}
           img = {keg.img}
-          key = {index}/>
+          key = {keg.id}/>
       )}
 
     </div>
-  )
+  );
 }
 
 EditKeg.propTypes = {
   kegList: PropTypes.array
-}
+};
 
 
-export default EditKeg
+export default EditKeg;
