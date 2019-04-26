@@ -43,6 +43,8 @@ class App extends React.Component  {
 
     };
     this.handleSellPint = this.handleSellPint.bind(this);
+
+    this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
   }
 
   handleSellPint(kegId) {
@@ -53,7 +55,6 @@ class App extends React.Component  {
 
   handleAddNewKeg(newKeg) {
     let newKegId = v4();
-    console.log(this.state.masterKegList);
     let newMasterKegList = Object.assign({}, this.state.masterKegList,
     {
       [newKegId]: newKeg
