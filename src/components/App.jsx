@@ -51,7 +51,7 @@ class App extends React.Component  {
 
 handleSellPint(kegId) {
   let newMasterKegList = Object.assign({}, this.state.masterKegList);
-  newMasterKegList.pintCount--;
+  newMasterKegList[kegId].pintCount--;
   this.setState({masterKegList: newMasterKegList})
   console.log(this.pintCount);
  }
