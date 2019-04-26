@@ -84,10 +84,10 @@ function AddKeg(props) {
         <input type = 'text' id = 'brand' name = 'beerBrand' placeholder = 'Brand' ref = {(input) => {_brand = input}}/>
 
         <label htmlFor = 'price'>Price per Pint</label>
-        <input type = 'number' id = 'price' name = 'beerPrice' placeholder = 'Price' ref = {(input) => {_price = input}}/>
+        <input type = 'number' id = 'price' name = 'beerPrice' step="0.01" placeholder = '0.00' ref = {(input) => {_price = input}}/>
 
         <label htmlFor = 'abv'>ABV</label>
-        <input type = 'number' id = 'abv' name = 'beerABV' placeholder = 'ABV' ref = {(input) => {_abv = input}}/>
+        <input type = 'number' id = 'abv' name = 'beerABV' step="0.1" placeholder = '0.0' ref = {(input) => {_abv = input}}/>
 
         <label htmlFor = 'img'>Image</label>
         <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input}} disabled/>
