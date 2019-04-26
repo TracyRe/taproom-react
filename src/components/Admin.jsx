@@ -5,7 +5,7 @@ import AddKeg from './AddKeg';
 import EditKeg from './EditKeg';
 
 function Admin(props) {
-
+console.log(props.kegList)
 
   return (
     <div>

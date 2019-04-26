@@ -4,6 +4,8 @@ import KegChange from './KegChange';
 
 
 function EditKeg(props) {
+  console.log(props.changeKeg);
+  console.log(props.kegList);
 
   return (
     <div className = 'outer'>
@@ -52,6 +54,7 @@ function EditKeg(props) {
         var keg = props.kegList[kegId];
         return <KegChange
           changeKeg = {props.changeKeg}
+          kegList = {props.kegList}
           img = {keg.img}
           beername = {keg.beername}
           brand = {keg.brand}
@@ -68,7 +71,7 @@ function EditKeg(props) {
 
 EditKeg.propTypes = {
   kegList: PropTypes.object,
-  changeKeg: PropTypes.func
+  changeKeg: PropTypes.object
 };
 
 

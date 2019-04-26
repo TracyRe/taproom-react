@@ -19,12 +19,12 @@ function AddKeg(props) {
       price:_price.value,
       abv:_abv.value,
       img:barrel,
-      pintCount: 124})
-      _beername.value = '';
-      _brand.value = '';
-      _price.value = '';
-      _abv.value = ''
-    }
+      pintCount: 124});
+    _beername.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _abv.value = '';
+  }
 
   return (
     <div>
@@ -76,21 +76,21 @@ function AddKeg(props) {
         `}
       </style>
       <h3>Add Keg</h3>
-      <form onSubmit={addNewKegSubmit}>
+      <form onSubmit = {addNewKegSubmit}>
         <label htmlFor = 'beername'>Name</label>
-        <input type = 'text' id = 'beername' name = 'beerName' placeholder = 'Beer' ref = {(input) => {_beername = input}}/>
+        <input type = 'text' id = 'beername' name = 'beerName' placeholder = 'Beer' ref = {(input) => {_beername = input;}}/>
 
         <label htmlFor = 'brand'>Brand</label>
-        <input type = 'text' id = 'brand' name = 'beerBrand' placeholder = 'Brand' ref = {(input) => {_brand = input}}/>
+        <input type = 'text' id = 'brand' name = 'beerBrand' placeholder = 'Brand' ref = {(input) => {_brand = input;}}/>
 
         <label htmlFor = 'price'>Price per Pint</label>
-        <input type = 'number' id = 'price' name = 'beerPrice' step="0.01" placeholder = '0.00' ref = {(input) => {_price = input}}/>
+        <input type = 'number' id = 'price' name = 'beerPrice' step = "0.01" placeholder = '0.00' ref = {(input) => {_price = input;}}/>
 
         <label htmlFor = 'abv'>ABV</label>
-        <input type = 'number' id = 'abv' name = 'beerABV' step="0.1" placeholder = '0.0' ref = {(input) => {_abv = input}}/>
+        <input type = 'number' id = 'abv' name = 'beerABV' step = "0.1" placeholder = '0.0' ref = {(input) => {_abv = input;}}/>
 
         <label htmlFor = 'img'>Image</label>
-        <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input}} disabled/>
+        <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input;}} disabled/>
 
         <h5 style = {{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
         <h5>Brand </h5>
@@ -101,7 +101,7 @@ function AddKeg(props) {
         <p>{props.abv} %</p>
         <h5><strong>Image</strong></h5> <img src = {barrel}/>
         <div className = 'buttonrow'>
-          <button type='submit'> Add Keg</button>
+          <button type = 'submit'> Add Keg</button>
         </div>
 
       </form>
