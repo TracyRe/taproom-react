@@ -20,7 +20,6 @@ function KegChange(props) {
       abv:_abv.value,
       img:_img.value,
       pintCount: 124})
-    })
   }
 
 
