@@ -7,7 +7,8 @@ console.log(props);
 
 function sellPint() {
   let newPintCount = props.pintCount;
-  props.onSellPint(newPintCount); 
+  // newPintCount--;
+  props.onSellPint(newPintCount);
 }
 
   return (
