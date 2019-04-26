@@ -47,12 +47,13 @@ class App extends React.Component  {
 
   handleSellPint(kegId) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList[0].pintCount--;
+    newMasterKegList[kegId].pintCount--;
     this.setState({masterKegList: newMasterKegList});
   }
 
   handleAddNewKeg(newKeg) {
-    const newKegId = v4();
+    let newKegId = v4();
+    console.log(this.state.masterKegList);
     let newMasterKegList = Object.assign({}, this.state.masterKegList,
     {
       [newKegId]: newKeg
@@ -61,7 +62,7 @@ class App extends React.Component  {
   }
 
   render() {
-    console.log(this.state.masterKegList[2].brand);
+    console.log(this.state.masterKegList);
     return (
 
       <div>
