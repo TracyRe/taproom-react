@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 
 function Keg(props) {
+console.log(props);
 
-
-  function sellPint() {
-  props.onSellPint(); }
-
+function sellPint(newPintCount) {
+let newPints = props.pintCount;
+props.onSellPint(newPintCount); }
 
   return (
     <div>
@@ -60,7 +60,7 @@ Keg.propTypes = {
   kegId: PropTypes.string,
   pintCount: PropTypes.number,
   onSellPint: PropTypes.func,
-  //newPintCount: PropTypes.number,
+  newPintCount: PropTypes.number,
 };
 
 export default Keg;
