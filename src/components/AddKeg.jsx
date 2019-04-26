@@ -1,8 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 import barrel from '../assets/rum-barrel.jpeg';
 
 function AddKeg(props) {
+  let _beername = null;
+  let _brand = null;
+  let _price = null;
+  let _abv = null;
+
+  function addNewKegSubmit(event) {
+    event.preventDefault();
+    props.addNewKeg({
+      beername:_beername.value,
+      brand:_brand.value,
+      price:_price.value,
+      abv:_abv.value})
+      _beername.value = '';
+      _brand.value = '';
+      _price.value = '';
+      _abv.value = ''
+    }
 
   return (
     <div>
@@ -54,18 +72,18 @@ function AddKeg(props) {
         `}
       </style>
       <h3>Add Keg</h3>
-      <form>
-        <label htmlFor = ''>Name</label>
-        <input type = 'text' name = 'beerName' value = ''/>
+      <form onSubmit={addNewKegSubmit}>
+        <label htmlFor = 'beername'>Name</label>
+        <input type = 'text' id = 'beername' name = 'beerName' placeholder = 'Beer' ref = {(input) => {_beername = input}}/>
 
-        <label htmlFor = ''>Brand</label>
-        <input type = 'text' name = 'beerBrand' value = ''/>
+        <label htmlFor = 'brand'>Brand</label>
+        <input type = 'text' id = 'brand' name = 'beerBrand' placeholder = 'Brand' ref = {(input) => {_brand = input}}/>
 
-        <label htmlFor = ''>Price per Pint</label>
-        <input type = 'number' name = 'beerPrice' value = ''/>
+        <label htmlFor = 'price'>Price per Pint</label>
+        <input type = 'number' id = 'price' name = 'beerPrice' placeholder = 'Price' ref = {(input) => {_price = input}}/>
 
-        <label htmlFor = ''>ABV</label>
-        <input type = 'number' name = 'beerAbv' value = ''/>
+        <label htmlFor = 'abv'>ABV</label>
+        <input type = 'number' id = 'abv' name = 'beerABV' placeholder = 'ABV' ref = {(input) => {_abv = input}}/>
 
         <label htmlFor = ''>Image</label>
         <input type = 'text' name = 'image' value = '../assets/rum-barrel.jpeg' disabled/>
@@ -79,7 +97,7 @@ function AddKeg(props) {
         <p>{props.abv} %</p>
         <h5><strong>Image</strong></h5> <img src = {barrel}/>
         <div className = 'buttonrow'>
-          <button> Add Keg</button>
+          <button type='submit'> Add Keg</button>
         </div>
 
       </form>
@@ -88,12 +106,7 @@ function AddKeg(props) {
 }
 
 AddKeg.propTypes = {
-  img: PropTypes.string,
-  beername: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.number,
-  abv: PropTypes.number,
-  pints: PropTypes.number
+  addNewKeg: PropTypes.func
 };
 
 export default AddKeg;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { v4 } from 'uuid';
 import Header from './Header';
 import Kegs from './Kegs';
 import Admin from './Admin';
@@ -44,10 +45,18 @@ class App extends React.Component  {
     this.handleSellPint = this.handleSellPint.bind(this);
   }
 
-
   handleSellPint(kegId) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[0].pintCount--;
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleAddNewKeg(newKeg) {
+    const newKegId = v4();
+    let newMasterKegList = Object.assign({}, this.state.masterKegList,
+    {
+      [newKegId]: newKeg
+    });
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -106,10 +115,10 @@ class App extends React.Component  {
         <Header/>
         <Switch>
           <Route exact path = '/' render = {()=><Kegs
-            kegList = {this.state.masterKegList}
-            newPintCount = {this.state.pintCount}
-            onSellPint = {this.handleSellPint}/>}/>
-          <Route path = '/admin' render = {()=><Admin kegList = {this.state.masterKegList}/>}/>
+              kegList = {this.state.masterKegList}
+              onSellPint = {this.handleSellPint}/>}/>
+          <Route path = '/admin' render = {()=><Admin
+              kegList = {this.state.masterKegList}  onAddNewKeg = {this.handleAddNewKeg}/>}/>
           <Route component = {Error404} />
         </Switch>
       </div>
@@ -124,3 +133,4 @@ export default App;
 
 // newPintCount = {this.state.pintCount}
 // onShowPintCount = {this.handleShowPintCount}
+// newPintCount = {this.state.pintCount}

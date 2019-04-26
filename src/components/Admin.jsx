@@ -10,7 +10,7 @@ function Admin(props) {
   return (
     <div>
       <style jsx>{`
-      div {
+          div {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -22,20 +22,20 @@ function Admin(props) {
       }
 
       h3 {
-        line-height: 100%;
-        font-size: 1.15rem;
-        margin-bottom: .5rem;
-      }
+          line-height: 100%;
+          font-size: 1.15rem;
+          margin-bottom: .5rem;
+        }
 
-      button {
-        margin: 0 auto 0 auto;
-        width: 300px;
-      }
+        button {
+          margin: 0 auto 0 auto;
+          width: 300px;
+        }
 
       `}
       </style>
       <h2>Employees Only - Keg Management</h2>
-      <AddKeg/>
+      <AddKeg addNewKeg = {props.onAddNewKeg}/>
       <EditKeg kegList = {props.kegList}/>
       <Link to = '/'><button>Close Keg Management</button></Link>
     </div>
@@ -44,7 +44,7 @@ function Admin(props) {
 
 Admin.propTypes = {
   admin: PropTypes.string,
-  kegList: PropTypes.array
+  kegList: PropTypes.object
 };
 
 export default Admin;
