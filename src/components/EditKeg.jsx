@@ -60,7 +60,8 @@ function EditKeg(props) {
           brand = {keg.brand}
           price = {keg.price}
           abv = {keg.abv}
-          key = {keg.id} />;
+          key = {kegId}
+          kegId = {kegId} />;
       })}
 
 

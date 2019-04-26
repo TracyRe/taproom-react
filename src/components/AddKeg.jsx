@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 import barrel from '../assets/rum-barrel.jpeg';
 
 function AddKeg(props) {

@@ -39,7 +39,8 @@ function Kegs(props) {
             brand = {keg.brand}
             price = {keg.price}
             abv = {keg.abv}
-            key = {keg.id}
+            key = {kegId}
+            kegId = {kegId}
             pintCount = {keg.pintCount}
             onSellPint = {props.onSellPint} />;
         })}

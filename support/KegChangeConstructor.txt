@@ -8,3 +8,15 @@ constructor(props) {
     img: props.img,
     pintCount: props.pintCount,
   };
+
+
+  <input type = 'text' id = 'beername' name = 'beerName' value = {this.props.beername} onChange = {this.handleChange} ref = {(input) => {_beername = input;}}/>
+
+        <input type = 'text' id = 'brand' name = 'beerBrand' value = {this.props.brand} ref = {(input) => {_brand = input;}}/>
+
+        <input type = 'number' id = 'price' name = 'beerPrice' value = {this.props.price} ref = {(input) => {_price = input;}}/>
+
+        <input type = 'number' id = 'abv' name = 'beerAbv' value = {this.props.abv}  ref = {(input) => {_abv = input;}}/>
+
+        <input type = 'text' id = 'img' name = 'image' value = {this.props.img} ref = {(input) => {_img = input;}}  disabled/>
+        <button onClick = {this.props.handleChangeKegSubmit}> Save Changes</button>
