@@ -6,8 +6,9 @@ import barrel from '../assets/rum-barrel.jpeg';
 
 class KegChange extends React.Component {
 
-  constructor(props) {
+  constructor() {
     super(props);
+    const { props } = this;
     this.state = {
       beername: props.beername,
       brand: props.brand,
@@ -35,7 +36,7 @@ class KegChange extends React.Component {
       pintCount: 124});
   }
 
-  render(props) {
+  render() {
     console.log(props.changeKeg);
     console.log(props.kegList);
     return (
@@ -102,7 +103,7 @@ KegChange.propTypes = {
   pintCount: PropTypes.number,
   changeKeg: PropTypes.object,
   kegList: PropTypes.object,
-  handleChangeKegSubmit: PropTypes.method
+  handleChangeKegSubmit: PropTypes.func
 };
 
 
