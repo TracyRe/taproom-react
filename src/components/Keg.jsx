@@ -5,19 +5,16 @@ import PropTypes from 'prop-types';
 function Keg(props) {
 
 
-  function sellPint() {
-    let newPints = props.pintCount;
-    newPints--;
+  function sellPint(newPintCount) {
+    //  let newPints = props.pintCount;
+    // newPints--;
     props.onSellPint(newPintCount);
+    console.log('pint sold');
   }
 
 
-  const Keg =  {
-    background: 'rgba(255, 255, 255, 0)'
-  };
-
   return (
-    <div style = {Keg}>
+    <div>
       <style jsx>{`
 
         img {
@@ -52,7 +49,7 @@ function Keg(props) {
       <button onClick = {sellPint}>Pull a Pint</button>
       <button>Sell a Growler</button>
 
-      <p>Pints remaining: {props.newPints}</p>
+      <p>Pints remaining: {props.pintCount}</p>
 
     </div>
   );
@@ -66,7 +63,7 @@ Keg.propTypes = {
   abv: PropTypes.number,
   pintCount: PropTypes.number,
   onSellPint: PropTypes.func,
-  newPintCount: PropTypes.number,
+  //newPintCount: PropTypes.number,
 };
 
 export default Keg;

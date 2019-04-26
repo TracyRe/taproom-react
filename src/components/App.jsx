@@ -10,12 +10,11 @@ import whiskeybarrel from '../assets/whiskey-barrel.jpg';
 import oakbarrel from '../assets/oak-barrel.jpg';
 
 class App extends React.Component  {
-
   constructor(props) {
     super(props);
     this.state =  {
-      masterKegList:   [
-        {
+      masterKegList:   {
+        '0' : {
           img: fancybarrel,
           beername:'Fancy Beer',
           brand:'The Fanciest',
@@ -23,7 +22,7 @@ class App extends React.Component  {
           abv: 4.8,
           pintCount: 124
         },
-        {
+        '1' : {
           img: whiskeybarrel,
           beername:'Pliny the Elder',
           brand:'Russian River',
@@ -31,7 +30,7 @@ class App extends React.Component  {
           abv: 5.5,
           pintCount: 124
         },
-        {
+        '2' : {
           img: oakbarrel,
           beername:'Miller Lite',
           brand:'Miller',
@@ -39,19 +38,21 @@ class App extends React.Component  {
           abv: 3.4,
           pintCount: 124
         }
-      ],
+      },
 
     };
     this.handleSellPint = this.handleSellPint.bind(this);
   }
 
 
-  handleSellPint(newPintCount) {
-    // let newPintCount = {this.state.pintCount};
-    this.setState({pintCount: newPintCount});
+  handleSellPint(kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[0].pintCount--;
+    this.setState({masterKegList: newMasterKegList});
   }
 
   render() {
+    console.log(this.state.masterKegList[2].brand);
     return (
 
       <div>

@@ -48,22 +48,25 @@ function EditKeg(props) {
         <div />
       </div>
 
-      {props.kegList.map((keg, index) =>
-        <KegChange
+      {Object.keys(props.kegList).map(function(kegId) {
+        var keg = props.kegList[kegId];
+        return <KegChange
+          img = {keg.img}
           beername = {keg.beername}
           brand = {keg.brand}
           price = {keg.price}
           abv = {keg.abv}
-          img = {keg.img}
-          key = {keg.id}/>
-      )}
+          key = {keg.id} />;
+      })}
+
+
 
     </div>
   );
 }
 
 EditKeg.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.object
 };
 
 

@@ -31,18 +31,18 @@ function Kegs(props) {
       </style>
       <div className = 'menu'>
 
-        {props.kegList.map((keg, index) =>
-          <Keg img = {keg.img}
+        {Object.keys(props.kegList).map(function(kegId) {
+          var keg = props.kegList[kegId];
+          return <Keg
+            img = {keg.img}
             beername = {keg.beername}
             brand = {keg.brand}
             price = {keg.price}
             abv = {keg.abv}
             key = {keg.id}
             pintCount = {keg.pintCount}
-            newPintCount = {props.newPintCount}
-            onSellPint = {props.onSellPint}
-          />
-        )}
+            onSellPint = {props.onSellPint} />;
+        })}
       </div>
       <div>
         <Auth />
@@ -52,9 +52,11 @@ function Kegs(props) {
 }
 
 Kegs.propTypes = {
-  kegList: PropTypes.array,
-  newPintCount: PropTypes.number,
+  kegList: PropTypes.object,
   onSellPint: PropTypes.func,
 };
 
 export default Kegs;
+
+//  newPintCount = {props.newPintCount}
+//newPintCount: PropTypes.number,
