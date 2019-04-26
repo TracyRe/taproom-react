@@ -27,3 +27,11 @@
       },
 
     };
+
+
+EditKeg proptypes, Kegs proptypes
+          key = {kegId}
+          kegId = {kegId}
+
+Keg proptypes
+  kegId: PropTypes.string,

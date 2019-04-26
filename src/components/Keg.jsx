@@ -61,6 +61,7 @@ Keg.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
+  kegId: PropTypes.string,
   pintCount: PropTypes.number,
   onSellPint: PropTypes.func,
   //newPintCount: PropTypes.number,
