@@ -8,7 +8,7 @@ function AddKeg(props) {
   let _brand = null;
   let _price = null;
   let _abv = null;
-  let _img = '../assets/rum-barrel.jpeg';
+  let _img = barrel;
   let _pintCount = 124;
 
   function addNewKegSubmit(event) {
@@ -18,7 +18,7 @@ function AddKeg(props) {
       brand:_brand.value,
       price:_price.value,
       abv:_abv.value,
-      img:_img.value,
+      img:barrel,
       pintCount: 124})
       _beername.value = '';
       _brand.value = '';
