@@ -51,6 +51,7 @@ function EditKeg(props) {
       {Object.keys(props.kegList).map(function(kegId) {
         var keg = props.kegList[kegId];
         return <KegChange
+          changeKeg = {props.changeKeg}
           img = {keg.img}
           beername = {keg.beername}
           brand = {keg.brand}
@@ -66,7 +67,8 @@ function EditKeg(props) {
 }
 
 EditKeg.propTypes = {
-  kegList: PropTypes.object
+  kegList: PropTypes.object,
+  changeKeg: PropTypes.func
 };
 
 

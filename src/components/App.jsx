@@ -45,6 +45,8 @@ class App extends React.Component  {
     this.handleSellPint = this.handleSellPint.bind(this);
 
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
+
+    this.handleEditKeg = this.handleEditKeg.bind(this);
   }
 
   handleSellPint(kegId) {
@@ -58,6 +60,14 @@ class App extends React.Component  {
     let newMasterKegList = Object.assign({}, this.state.masterKegList,
     {
       [newKegId]: newKeg
+    });
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleEditKeg(kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList,
+    {
+      [kegId]: kegId
     });
     this.setState({masterKegList: newMasterKegList});
   }
@@ -120,7 +130,9 @@ class App extends React.Component  {
               kegList = {this.state.masterKegList}
               onSellPint = {this.handleSellPint}/>}/>
           <Route path = '/admin' render = {()=><Admin
-              kegList = {this.state.masterKegList}  onAddNewKeg = {this.handleAddNewKeg}/>}/>
+              kegList = {this.state.masterKegList}
+              onEditKeg = {this.handleEditKeg}
+              onAddNewKeg = {this.handleAddNewKeg}/>}/>
           <Route component = {Error404} />
         </Switch>
       </div>
