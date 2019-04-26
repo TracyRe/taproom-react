@@ -19,7 +19,7 @@ function KegChange(props) {
       price:_price.value,
       abv:_abv.value,
       img:_img.value,
-      pintCount: 124})
+      pintCount: 124});
   }
 
 
@@ -62,16 +62,16 @@ function KegChange(props) {
       </style>
 
 
-      <input type = 'text' id = 'beername' name = 'beerName' value = {props.beername}ref = {(input) => {_beername = input}}/>
+      <input type = 'text' id = 'beername' name = 'beerName' value = {props.beername}ref = {(input) => {_beername = input;}}/>
 
-      <input type = 'text' id = 'brand' name = 'beerBrand' value = {props.brand} ref = {(input) => {_brand = input}}/>
+      <input type = 'text' id = 'brand' name = 'beerBrand' value = {props.brand} ref = {(input) => {_brand = input;}}/>
 
-      <input type = 'number' id = 'price' name = 'beerPrice' value = {props.price} ref = {(input) => {_price = input}}/>
+      <input type = 'number' id = 'price' name = 'beerPrice' value = {props.price} ref = {(input) => {_price = input;}}/>
 
-      <input type = 'number' id = 'abv' name = 'beerAbv' value = {props.abv}  ref = {(input) => {_abv = input}}/>
+      <input type = 'number' id = 'abv' name = 'beerAbv' value = {props.abv}  ref = {(input) => {_abv = input;}}/>
 
-      <input type = 'text' id = 'img' name = 'image' value = {props.img} ref = {(input) => {_img = input}}  disabled/>
-      <button onClick={changeKegSubmit}> Save Changes</button>
+      <input type = 'text' id = 'img' name = 'image' value = {props.img} ref = {(input) => {_img = input;}}  disabled/>
+      <button onClick = {changeKegSubmit}> Save Changes</button>
     </form>
   );
 }

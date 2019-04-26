@@ -6,7 +6,7 @@ import Auth from './Auth';
 
 
 function Kegs(props) {
-
+console.log(props);
 
   return (
     <div>
