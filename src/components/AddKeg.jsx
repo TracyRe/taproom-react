@@ -8,6 +8,8 @@ function AddKeg(props) {
   let _brand = null;
   let _price = null;
   let _abv = null;
+  let _img = '../assets/rum-barrel.jpeg';
+  let _pintCount = 124;
 
   function addNewKegSubmit(event) {
     event.preventDefault();
@@ -15,7 +17,9 @@ function AddKeg(props) {
       beername:_beername.value,
       brand:_brand.value,
       price:_price.value,
-      abv:_abv.value})
+      abv:_abv.value,
+      img:_img.value,
+      pintCount: 124})
       _beername.value = '';
       _brand.value = '';
       _price.value = '';
@@ -85,8 +89,8 @@ function AddKeg(props) {
         <label htmlFor = 'abv'>ABV</label>
         <input type = 'number' id = 'abv' name = 'beerABV' placeholder = 'ABV' ref = {(input) => {_abv = input}}/>
 
-        <label htmlFor = ''>Image</label>
-        <input type = 'text' name = 'image' value = '../assets/rum-barrel.jpeg' disabled/>
+        <label htmlFor = 'img'>Image</label>
+        <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input}} disabled/>
 
         <h5 style = {{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
         <h5>Brand </h5>
