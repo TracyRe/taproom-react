@@ -9,12 +9,12 @@ class KegChange extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    beername: props.beername,
-    brand: props.brand,
-    price: props.price,
-    abv: props.abv,
-    img: props.img,
-    pintCount: props.pintCount,
+    this.beername: props.beername,
+    this.brand: props.brand,
+    this.price: props.price,
+    this.abv: props.abv,
+    this.img: props.img,
+    this.pintCount: props.pintCount,
   };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeKegSubmit = this.handleChangeKegSubmit.bind(this);
@@ -25,7 +25,7 @@ class KegChange extends React.Component {
       this.setState({value: event.input});
     }
 
-    handleChangeKegSubmit() {
+    handleChangeKegSubmit(props) {
       props.changeKeg({
         beername:_beername.value,
         brand:_brand.value,
@@ -35,7 +35,7 @@ class KegChange extends React.Component {
         pintCount: 124})
       }
 
-    render(props) {
+    render() {
       return (
         <form>
           <style jsx>{`
@@ -75,7 +75,7 @@ class KegChange extends React.Component {
             </style>
 
 
-            <input type = 'text' id = 'beername' name = 'beerName' value = {props.beername}ref = {(input) => {_beername = input}}/>
+            <input type = 'text' id = 'beername' name = 'beerName' value = {props.beername} ref = {(input) => {_beername = input}}/>
 
             <input type = 'text' id = 'brand' name = 'beerBrand' value = {props.brand} ref = {(input) => {_brand = input}}/>
 
@@ -84,7 +84,7 @@ class KegChange extends React.Component {
             <input type = 'number' id = 'abv' name = 'beerAbv' value = {props.abv}  ref = {(input) => {_abv = input}}/>
 
             <input type = 'text' id = 'img' name = 'image' value = {props.img} ref = {(input) => {_img = input}}  disabled/>
-            <button onClick={changeKegSubmit}> Save Changes</button>
+            <button onClick={props.handleChangeKegSubmit}> Save Changes</button>
           </form>
         );
     }
