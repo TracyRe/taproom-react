@@ -36,6 +36,7 @@ class KegChange extends React.Component {
       }
 
     render(props) {
+      console.log(props.changeKeg);
       return (
         <form>
           <style jsx>{`
@@ -75,7 +76,7 @@ class KegChange extends React.Component {
             </style>
 
 
-            <input type = 'text' id = 'beername' name = 'beerName' value = {this.props.beername} ref = {(input) => {_beername = input}}/>
+            <input type = 'text' id = 'beername' name = 'beerName' value = {this.props.beername} onChange = {this.handleChange} ref = {(input) => {_beername = input}}/>
 
             <input type = 'text' id = 'brand' name = 'beerBrand' value = {this.props.brand} ref = {(input) => {_brand = input}}/>
 

@@ -1,0 +1,10 @@
+constructor(props) {
+    super(props);
+    this.state = {
+    beername: props.beername,
+    brand: props.brand,
+    price: props.price,
+    abv: props.abv,
+    img: props.img,
+    pintCount: props.pintCount,
+  };
