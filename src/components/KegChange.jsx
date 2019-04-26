@@ -9,12 +9,12 @@ class KegChange extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    this.beername: props.beername,
-    this.brand: props.brand,
-    this.price: props.price,
-    this.abv: props.abv,
-    this.img: props.img,
-    this.pintCount: props.pintCount,
+    beername: props.beername,
+    brand: props.brand,
+    price: props.price,
+    abv: props.abv,
+    img: props.img,
+    pintCount: props.pintCount,
   };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeKegSubmit = this.handleChangeKegSubmit.bind(this);
@@ -22,7 +22,7 @@ class KegChange extends React.Component {
   }
 
     handleChange(event) {
-      this.setState({value: event.input});
+      this.setState({value: event.target.value});
     }
 
     handleChangeKegSubmit(props) {
@@ -35,7 +35,7 @@ class KegChange extends React.Component {
         pintCount: 124})
       }
 
-    render() {
+    render(props) {
       return (
         <form>
           <style jsx>{`
@@ -75,16 +75,16 @@ class KegChange extends React.Component {
             </style>
 
 
-            <input type = 'text' id = 'beername' name = 'beerName' value = {props.beername} ref = {(input) => {_beername = input}}/>
+            <input type = 'text' id = 'beername' name = 'beerName' value = {this.props.beername} ref = {(input) => {_beername = input}}/>
 
-            <input type = 'text' id = 'brand' name = 'beerBrand' value = {props.brand} ref = {(input) => {_brand = input}}/>
+            <input type = 'text' id = 'brand' name = 'beerBrand' value = {this.props.brand} ref = {(input) => {_brand = input}}/>
 
-            <input type = 'number' id = 'price' name = 'beerPrice' value = {props.price} ref = {(input) => {_price = input}}/>
+            <input type = 'number' id = 'price' name = 'beerPrice' value = {this.props.price} ref = {(input) => {_price = input}}/>
 
-            <input type = 'number' id = 'abv' name = 'beerAbv' value = {props.abv}  ref = {(input) => {_abv = input}}/>
+            <input type = 'number' id = 'abv' name = 'beerAbv' value = {this.props.abv}  ref = {(input) => {_abv = input}}/>
 
-            <input type = 'text' id = 'img' name = 'image' value = {props.img} ref = {(input) => {_img = input}}  disabled/>
-            <button onClick={props.handleChangeKegSubmit}> Save Changes</button>
+            <input type = 'text' id = 'img' name = 'image' value = {this.props.img} ref = {(input) => {_img = input}}  disabled/>
+            <button onClick={this.props.handleChangeKegSubmit}> Save Changes</button>
           </form>
         );
     }
