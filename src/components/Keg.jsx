@@ -67,9 +67,6 @@ Keg.propTypes = {
   pintCount: PropTypes.number,
   onSellPint: PropTypes.func,
   newPintCount: PropTypes.number,
-
-//  onShowPintCount: PropTypes.func,
-
 };
 
 export default Keg;

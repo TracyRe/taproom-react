@@ -10,7 +10,6 @@ function Admin(props) {
   return (
     <div>
       <style jsx>{`
-
       div {
         display: flex;
         flex-flow: column nowrap;
