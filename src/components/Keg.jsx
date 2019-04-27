@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 function Keg(props) {
 console.log(props);
 
-function sellPint() {
+function sellPint(kegId) {
   let newPintCount = props.pintCount;
   // newPintCount--;
-  props.onSellPint(newPintCount);
+  props.onSellPint(newPintCount, props.kegId);
 }
 
   return (
