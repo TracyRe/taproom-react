@@ -53,16 +53,20 @@ class App extends React.Component  {
 
 handleSellPint(newPintCount, kegId) {
   let newMasterKegList = Object.assign({}, this.state.masterKegList);
-  newMasterKegList[kegId].pintCount--;
-  this.setState({masterKegList: newMasterKegList})
+  if (newMasterKegList[kegId].pintCount > 0) {
+    newMasterKegList[kegId].pintCount--;
+    this.setState({masterKegList: newMasterKegList})
+  }
   console.log(this.pintCount);
   console.log(newPintCount);
  }
 
 handleSellGrowler(newPintCount, kegId) {
   let newMasterKegList = Object.assign({}, this.state.masterKegList);
-  newMasterKegList[kegId].pintCount -=4;
-  this.setState({masterKegList: newMasterKegList})
+  if (newMasterKegList[kegId].pintCount > 3) {
+    newMasterKegList[kegId].pintCount -=4;
+    this.setState({masterKegList: newMasterKegList})
+  }
   console.log(this.pintCount);
   console.log(newPintCount);
  }
