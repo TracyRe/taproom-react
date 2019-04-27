@@ -42,7 +42,8 @@ console.log(props);
             key = {kegId}
             kegId = {kegId}
             pintCount = {keg.pintCount}
-            onSellPint = {props.onSellPint} />;
+            onSellPint = {props.onSellPint}
+            onSellGrowler = {props.onSellGrowler}  />;
         })}
       </div>
       <div>
@@ -55,6 +56,7 @@ console.log(props);
 Kegs.propTypes = {
   kegList: PropTypes.object,
   onSellPint: PropTypes.func,
+  onSellGrowler: PropTypes.func,
 };
 
 export default Kegs;

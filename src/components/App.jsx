@@ -44,6 +44,8 @@ class App extends React.Component  {
     };
     this.handleSellPint = this.handleSellPint.bind(this);
 
+    this.handleSellGrowler = this.handleSellGrowler.bind(this);
+
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
 
     this.handleEditKeg = this.handleEditKeg.bind(this);
@@ -52,6 +54,14 @@ class App extends React.Component  {
 handleSellPint(newPintCount, kegId) {
   let newMasterKegList = Object.assign({}, this.state.masterKegList);
   newMasterKegList[kegId].pintCount--;
+  this.setState({masterKegList: newMasterKegList})
+  console.log(this.pintCount);
+  console.log(newPintCount);
+ }
+
+handleSellGrowler(newPintCount, kegId) {
+  let newMasterKegList = Object.assign({}, this.state.masterKegList);
+  newMasterKegList[kegId].pintCount -=4;
   this.setState({masterKegList: newMasterKegList})
   console.log(this.pintCount);
   console.log(newPintCount);
@@ -137,7 +147,8 @@ handleSellPint(newPintCount, kegId) {
         <Switch>
           <Route exact path = '/' render = {()=><Kegs
             kegList = {this.state.masterKegList}
-            onSellPint = {this.handleSellPint}/>}/>
+            onSellPint = {this.handleSellPint}
+            onSellGrowler = {this.handleSellGrowler}/>}/>
           <Route path = '/admin' render = {()=><Admin
             kegList = {this.state.masterKegList}
             onEditKeg = {this.handleEditKeg}

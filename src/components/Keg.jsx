@@ -11,6 +11,11 @@ function sellPint(kegId) {
   props.onSellPint(newPintCount, props.kegId);
 }
 
+function sellGrowler(kegId) {
+  let newPintCount = props.pintCount;
+  props.onSellGrowler(newPintCount, props.kegId);
+}
+
   return (
     <div>
       <style jsx>{`
@@ -45,7 +50,7 @@ function sellPint(kegId) {
       <p className = 'brand'>{props.brand}</p>
       <p>ABV: {props.abv}%</p>
       <button onClick = {sellPint}>Pull a Pint</button>
-      <button>Sell a Growler</button>
+      <button onClick = {sellGrowler}>Sell a Growler</button>
 
       <p>Pints remaining: {props.pintCount}</p>
 
@@ -62,6 +67,7 @@ Keg.propTypes = {
   kegId: PropTypes.string,
   pintCount: PropTypes.number,
   onSellPint: PropTypes.func,
+  onSellGrowler: PropTypes.func,
   newPintCount: PropTypes.number,
 };
 
