@@ -49,7 +49,7 @@ class App extends React.Component  {
     this.handleEditKeg = this.handleEditKeg.bind(this);
   }
 
-handleSellPint(newPintCount) {
+handleSellPint(newPintCount, kegId) {
   let newMasterKegList = Object.assign({}, this.state.masterKegList);
   newMasterKegList[kegId].pintCount--;
   this.setState({masterKegList: newMasterKegList})
