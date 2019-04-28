@@ -12,7 +12,8 @@ function KegChange(props) {
   let _img = props.img;
   let _pintCount = props.pintCount;
 
-  function changeKegSubmit() {
+  function changeKegSubmit(event) {
+    event.preventDefault();
     props.changeKeg({
       beername:_beername.value,
       brand:_brand.value,
@@ -66,9 +67,9 @@ function KegChange(props) {
 
       <input type = 'text' id = 'brand' name = 'beerBrand' defaultValue = {props.brand} ref = {(input) => {_brand = input;}}/>
 
-      <input type = 'number' id = 'price' name = 'beerPrice' defaultValue = {props.price} ref = {(input) => {_price = input;}}/>
+      <input type = 'number' id = 'price' name = 'beerPrice' defaultValue = {props.price} step = "0.01" ref = {(input) => {_price = input;}}/>
 
-      <input type = 'number' id = 'abv' name = 'beerAbv' defaultValue = {props.abv}  ref = {(input) => {_abv = input;}}/>
+      <input type = 'number' id = 'abv' name = 'beerAbv' defaultValue = {props.abv} step = "0.1" ref = {(input) => {_abv = input;}}/>
 
       <input type = 'text' id = 'img' name = 'image' defaultValue = {props.img} ref = {(input) => {_img = input;}}  disabled/>
       <button onClick = {changeKegSubmit}> Save Changes</button>
