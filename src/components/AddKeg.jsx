@@ -92,14 +92,6 @@ function AddKeg(props) {
         <label htmlFor = 'img'>Image</label>
         <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input;}} disabled/>
 
-        <h5 style = {{textAlign: 'left'}}>Beer Name</h5><p>{props.beername}</p>
-        <h5>Brand </h5>
-        <p>{props.brand}</p>
-        <h5>Price per Pint </h5>
-        <p>$ {props.price}</p>
-        <h5>ABV </h5>
-        <p>{props.abv} %</p>
-        <h5><strong>Image</strong></h5> <img src = {barrel}/>
         <div className = 'buttonrow'>
           <button type = 'submit'> Add Keg</button>
         </div>
