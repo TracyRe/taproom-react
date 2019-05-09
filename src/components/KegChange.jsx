@@ -11,10 +11,11 @@ function KegChange(props) {
   let _abv = props.abv;
   let _img = props.img;
   let _pintCount = props.pintCount;
+  let {kegId} = props;
 
   function changeKegSubmit(event) {
     event.preventDefault();
-    props.changeKeg({
+    props.changeKeg(kegId, {
       beername:_beername.value,
       brand:_brand.value,
       price:_price.value,

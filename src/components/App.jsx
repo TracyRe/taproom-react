@@ -70,14 +70,8 @@ handleSellGrowler(newPintCount, kegId) {
   console.log(this.pintCount);
   console.log(newPintCount);
  }
-//
-// handleSellPint(kegId) {
-//   let newMasterKegList = Object.assign({}, this.state.masterKegList);
-//   newMasterKegList[kegId].pintCount--;
-//   this.setState({masterKegList: newMasterKegList})
-//   console.log(this.pintCount);
-//  }
 
+// adds new keg to list
   handleAddNewKeg(newKeg) {
     let newKegId = v4();
     let newMasterKegList = Object.assign({}, this.state.masterKegList,
@@ -87,16 +81,14 @@ handleSellGrowler(newPintCount, kegId) {
     this.setState({masterKegList: newMasterKegList});
   }
 
-  handleEditKeg(kegId) {
-    let newMasterKegList = Object.assign({}, this.state.masterKegList,
-      {
-        [kegId]: kegId
-      });
+// intended to replace existing keg in list
+  handleEditKeg(kegId, updatedKeg) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[kegId] = updatedKeg;
     this.setState({masterKegList: newMasterKegList});
   }
 
   render() {
-    console.log(this.state.masterKegList);
     return (
 
       <div>
