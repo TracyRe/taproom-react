@@ -17,26 +17,29 @@ class App extends React.Component  {
       masterKegList:   {
         '0' : {
           img: fancybarrel,
-          beername:'Fancy Beer',
-          brand:'The Fanciest',
-          price: 5,
-          abv: 4.8,
+          beername:'Hefeweizen',
+          brand:'Widmer Brothers',
+          price: 5.5,
+          abv: 4.9,
+          ibu: 26,
           pintCount: 124
         },
         '1' : {
           img: whiskeybarrel,
           beername:'Pliny the Elder',
           brand:'Russian River',
-          price: 9,
-          abv: 5.5,
+          price: 6.5,
+          abv: 8.0,
+          ibu: 92,
           pintCount: 124
         },
         '2' : {
           img: oakbarrel,
           beername:'Miller Lite',
           brand:'Miller',
-          price: 3,
-          abv: 3.4,
+          price: 4,
+          abv: 4.2,
+          ibu: 10,
           pintCount: 124
         }
       },
@@ -46,32 +49,39 @@ class App extends React.Component  {
 
     this.handleSellGrowler = this.handleSellGrowler.bind(this);
 
+    this.handleReplaceKeg = this.handleReplaceKeg.bind(this);
+
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
 
     this.handleEditKeg = this.handleEditKeg.bind(this);
+
+    this.handleRemoveKeg = this.handleRemoveKeg.bind(this);
   }
 
-handleSellPint(newPintCount, kegId) {
-  let newMasterKegList = Object.assign({}, this.state.masterKegList);
-  if (newMasterKegList[kegId].pintCount > 0) {
-    newMasterKegList[kegId].pintCount--;
-    this.setState({masterKegList: newMasterKegList})
+  handleSellPint(newPintCount, kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    if (newMasterKegList[kegId].pintCount > 0) {
+      newMasterKegList[kegId].pintCount--;
+      this.setState({masterKegList: newMasterKegList});
+    }
   }
-  console.log(this.pintCount);
-  console.log(newPintCount);
- }
 
-handleSellGrowler(newPintCount, kegId) {
-  let newMasterKegList = Object.assign({}, this.state.masterKegList);
-  if (newMasterKegList[kegId].pintCount > 3) {
-    newMasterKegList[kegId].pintCount -=4;
-    this.setState({masterKegList: newMasterKegList})
+  handleSellGrowler(newPintCount, kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    if (newMasterKegList[kegId].pintCount > 3) {
+      newMasterKegList[kegId].pintCount -=4;
+      this.setState({masterKegList: newMasterKegList});
+    }
   }
-  console.log(this.pintCount);
-  console.log(newPintCount);
- }
 
-// adds new keg to list
+  // intended to refill keg
+  handleReplaceKeg(newPintCount, kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[kegId].pintCount = 124;
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  // adds new keg to list
   handleAddNewKeg(newKeg) {
     let newKegId = v4();
     let newMasterKegList = Object.assign({}, this.state.masterKegList,
@@ -81,12 +91,20 @@ handleSellGrowler(newPintCount, kegId) {
     this.setState({masterKegList: newMasterKegList});
   }
 
-// intended to replace existing keg in list
+  // intended to replace existing keg in list
   handleEditKeg(kegId, updatedKeg) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[kegId] = updatedKeg;
     this.setState({masterKegList: newMasterKegList});
   }
+
+  // intended to remove existing keg from list
+  handleRemoveKeg(kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList = masterKegList.filter(item => item !== kegId);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
 
   render() {
     return (
@@ -144,10 +162,12 @@ handleSellGrowler(newPintCount, kegId) {
           <Route exact path = '/' render = {()=><Kegs
             kegList = {this.state.masterKegList}
             onSellPint = {this.handleSellPint}
-            onSellGrowler = {this.handleSellGrowler}/>}/>
+            onSellGrowler = {this.handleSellGrowler}
+            onReplaceKeg = {this.handleReplaceKeg}/>}/>
           <Route path = '/admin' render = {()=><Admin
             kegList = {this.state.masterKegList}
             onEditKeg = {this.handleEditKeg}
+            onRemoveKeg = {this.handleRemoveKeg}
             onAddNewKeg = {this.handleAddNewKeg}/>}/>
           <Route component = {Error404} />
         </Switch>
@@ -159,8 +179,3 @@ handleSellGrowler(newPintCount, kegId) {
 
 
 export default App;
-
-
-// newPintCount = {this.state.pintCount}
-// onShowPintCount = {this.handleShowPintCount}
-// newPintCount = {this.state.pintCount}

@@ -6,7 +6,6 @@ import EditKeg from './EditKeg';
 
 function Admin(props) {
 
-
   return (
     <div>
       <style jsx>{`
@@ -38,6 +37,7 @@ function Admin(props) {
       <AddKeg addNewKeg = {props.onAddNewKeg}/>
       <EditKeg
         changeKeg = {props.onEditKeg}
+        removeKeg = {props.onRemoveKeg}
         kegList = {props.kegList}/>
       <Link to = '/'><button>Close Keg Management</button></Link>
     </div>
@@ -45,7 +45,9 @@ function Admin(props) {
 }
 
 Admin.propTypes = {
-  changeKeg: PropTypes.func,
+  onAddNewKeg: PropTypes.func,
+  onEditKeg: PropTypes.func,
+  onRemoveKeg: PropTypes.func,
   admin: PropTypes.string,
   kegList: PropTypes.object
 };

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
-import barrel from '../assets/rum-barrel.jpeg';
 
 
 function KegChange(props) {
@@ -9,8 +7,8 @@ function KegChange(props) {
   let _brand = props.brand;
   let _price = props.price;
   let _abv = props.abv;
+  let _ibu = props.ibu;
   let _img = props.img;
-  let _pintCount = props.pintCount;
   let {kegId} = props;
 
   function changeKegSubmit(event) {
@@ -20,8 +18,14 @@ function KegChange(props) {
       brand:_brand.value,
       price:_price.value,
       abv:_abv.value,
+      ibu:_ibu.value,
       img:_img.value,
       pintCount: 124});
+  }
+
+  function removeKegSubmit(event) {
+    event.preventDefault();
+    props.removeKeg(kegId);
   }
 
 
@@ -31,7 +35,7 @@ function KegChange(props) {
 
         button {
           align-self: center;
-          width: 140px;
+          width: 80px;
           font-size: .75rem;
           padding: .25rem 0;
         }
@@ -39,7 +43,7 @@ function KegChange(props) {
 
         form {
           display: grid;
-          grid-template-columns: 1fr 1fr 80px 60px 1fr 150px;
+          grid-template-columns: 1fr 1fr 80px 60px 60px 1fr 90px 90px;
           grid-auto-flow: row;
         }
 
@@ -72,20 +76,26 @@ function KegChange(props) {
 
       <input type = 'number' id = 'abv' name = 'beerAbv' defaultValue = {props.abv} step = "0.1" ref = {(input) => {_abv = input;}}/>
 
+      <input type = 'number' id = 'ibu' name = 'beerIbu' defaultValue = {props.ibu} step = "0.1" ref = {(input) => {_ibu = input;}}/>
+
       <input type = 'text' id = 'img' name = 'image' defaultValue = {props.img} ref = {(input) => {_img = input;}}  disabled/>
-      <button onClick = {changeKegSubmit}> Save Changes</button>
+      <button onClick = {changeKegSubmit}> Save</button>
+      <button onClick = {removeKegSubmit}> Remove</button>
     </form>
   );
 }
 
 KegChange.propTypes = {
   changeKeg: PropTypes.func,
+  removeKeg: PropTypes.func,
   img: PropTypes.string,
   beername: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
-  pints: PropTypes.number
+  ibu: PropTypes.number,
+  pints: PropTypes.number,
+  pintCount: PropTypes.number
 };
 
 export default KegChange;

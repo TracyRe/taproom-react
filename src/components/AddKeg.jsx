@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 import barrel from '../assets/rum-barrel.jpeg';
 
 function AddKeg(props) {
@@ -8,8 +7,8 @@ function AddKeg(props) {
   let _brand = null;
   let _price = null;
   let _abv = null;
+  let _ibu = null;
   let _img = barrel;
-  let _pintCount = 124;
 
   function addNewKegSubmit(event) {
     event.preventDefault();
@@ -18,12 +17,14 @@ function AddKeg(props) {
       brand:_brand.value,
       price:_price.value,
       abv:_abv.value,
+      ibu:_ibu.value,
       img:barrel,
       pintCount: 124});
     _beername.value = '';
     _brand.value = '';
     _price.value = '';
     _abv.value = '';
+    _ibu.value = '';
   }
 
   return (
@@ -89,6 +90,9 @@ function AddKeg(props) {
         <label htmlFor = 'abv'>ABV</label>
         <input type = 'number' id = 'abv' name = 'beerABV' step = "0.1" placeholder = '0.0' ref = {(input) => {_abv = input;}}/>
 
+        <label htmlFor = 'ibu'>IBU</label>
+        <input type = 'number' id = 'ibu' name = 'beerIBU' step = "0.1" placeholder = '0.0' ref = {(input) => {_ibu = input;}}/>
+
         <label htmlFor = 'img'>Image</label>
         <input type = 'text' id = 'img' name = 'image' value = '../assets/rum-barrel.jpeg' ref = {(input) => {_img = input;}} disabled/>
 
@@ -103,7 +107,7 @@ function AddKeg(props) {
 }
 
 AddKeg.propTypes = {
-  addNewKeg: PropTypes.func
+  onAddNewKeg: PropTypes.func
 };
 
 export default AddKeg;
