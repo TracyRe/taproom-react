@@ -23,6 +23,8 @@ function KegChange(props) {
       pintCount: 124});
   }
 
+
+
   function removeKegSubmit(event) {
     event.preventDefault();
     props.removeKeg(kegId);

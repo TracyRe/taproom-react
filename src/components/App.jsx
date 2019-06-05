@@ -74,12 +74,12 @@ class App extends React.Component  {
     }
   }
 
-  // intended to refill keg
+// intended to refill keg
   handleReplaceKeg(newPintCount, kegId) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList[kegId].pintCount = 124;
-    this.setState({masterKegList: newMasterKegList});
-  }
+      newMasterKegList[kegId].pintCount = 124;
+      this.setState({masterKegList: newMasterKegList});
+    }
 
   // adds new keg to list
   handleAddNewKeg(newKeg) {
@@ -96,13 +96,14 @@ class App extends React.Component  {
     let newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[kegId] = updatedKeg;
     this.setState({masterKegList: newMasterKegList});
+    console.log(kegId);
   }
 
   // intended to remove existing keg from list
-  handleRemoveKeg(kegId) {
-    let newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList = masterKegList.filter(item => item !== kegId);
-    this.setState({masterKegList: newMasterKegList});
+  handleRemoveKeg(kegToRemove) {
+    const filteredKegList = this.state.masterKegList.filter(keg => keg !== kegToRemove);
+    this.setState({masterKegList: filteredKegList});
+      console.log(kegId);
   }
 
 
@@ -179,3 +180,8 @@ class App extends React.Component  {
 
 
 export default App;
+
+
+// newPintCount = {this.state.pintCount}
+// onShowPintCount = {this.handleShowPintCount}
+// newPintCount = {this.state.pintCount}
