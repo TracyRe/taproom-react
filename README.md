@@ -3,6 +3,7 @@
 #### React component and routing project for Epicodus
 
 _Published_ **April 19 2019**<br>
+_Updated_ **September 30 2019**<br>
 _Author_ **Tracy Reith**
 
 1. [Description](#description)
@@ -15,7 +16,6 @@ _Author_ **Tracy Reith**
 1. [Product Requirements](#product-requirements)
 1. [Non-technical Requirements](#non-technical-requirements)
 1. [Assumptions](#assumptions)
-1. [Development Specs](#development-specs)
 1. [Installation](#installation)
 1. [Known Bugs](#known-bugs)
 1. [Technologies Used](#technologies-used)
@@ -49,29 +49,54 @@ Angular has a lot of programming shortcuts that I am missing right now, particul
 ![Component and Routing Architecture Diagram](./src/assets/taproom-react-structure.png?raw=true "Component and Routing Architecture Diagram")
 
 ### Target Audience/Users
-*
+* Bartender / bar employee
 
 ### User Stories
-**As a** ,<br>
-**I want** ,<br>  
-**So that** .
+**As a** bartender,<br>
+**I want** the system to decrement by one,<br>  
+**So that** I can sell a single pint of beer.
+
+**As a** bartender,<br>
+**I want** the system to decrement by four,<br>  
+**So that** I can sell a growler of beer.
+
+**As a** bartender,<br>
+**I want** the system to indicate when a keg is within 4 pints of empty,<br>  
+**So that** I know it will need to be replaced.
+
+**As a** bartender,<br>
+**I want** the system to provide a mechanism for "replacing" a keg,<br>  
+**So that** I can continue to sell pints and kegs of the same beer.
+
+**As a** bartender,<br>
+**I want** the system to provide a mechanism for adding a new keg of beer,<br>  
+**So that** I can increase the offerings of beer.
+
+**As a** bartender,<br>
+**I want** the system to mechanism for removing a keg from the list,<br>  
+**So that** I will not be able to sell a beer my bar no longer offers.
+
+**As a** bartender,<br>
+**I want** a way to edit a keg,<br>  
+**So that** I can change the beer on the list without actually removing or adding it.
 
 
 ### Product Requirements
-*
+* Can "sell" single pints one at a time
+* Can "sell" growlers equal to 4 pints
+* Will alert bartender when a keg is running low and needs to be replaced
+* Can replace a keg
+* Can add new kegs
+* Can change existing kegs
+* Can remove existing kegs
 
 ### Non-technical Requirements
-*
+* Visually appealing
 
 ### Assumptions
 * No user authentication for create and update functionality
-* No delete functionality
-
-### Development Specs
-
-Specification | Input | Output
-------------- | ----- | ------
- | "" | ""
+* Kegs contain 124 pints
+* Initiates with hard-coded set of 3 kegs
 
 
 ### Installation

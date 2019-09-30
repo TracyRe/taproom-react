@@ -100,9 +100,10 @@ class App extends React.Component  {
   }
 
   // intended to remove existing keg from list
-  handleRemoveKeg(kegToRemove) {
-    const filteredKegList = this.state.masterKegList.filter(keg => keg !== kegToRemove);
-    this.setState({masterKegList: filteredKegList});
+  handleRemoveKeg(kegId) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    delete newMasterKegList[kegId];
+    this.setState({masterKegList: newMasterKegList});
       console.log(kegId);
   }
 
